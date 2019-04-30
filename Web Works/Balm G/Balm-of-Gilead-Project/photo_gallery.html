@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gallery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  
+  <!-- fonts link -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+  * {
+    box-sizing: border-box;
+  }
+
+body {
+    margin: 0;
+}
+
+
+/* The grid: Four equal columns that floats next to each other */
+.horizontal-scroll-wrapper {  
+  width: 100px;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.horizontal-scroll-wrapper > div {
+  padding-right: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.horizontal-scroll-wrapper {
+  transform: rotate(-90deg);
+  transform-origin: right top;
+}
+
+.horizontal-scroll-wrapper > div {
+  transform: rotate(90deg);
+  transform-origin: right top;
+}
+
+.horizontal-scroll-wrapper {
+  transform:rotate(-90deg) translateY(-100px);
+}
+
+/*.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+*/
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.7; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.column:after {
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-expand-sm  navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html"><span style="font-size: 11px;">BALM OF GILEAD WIDOWS & ORPHANS MINISTRY</span></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+
+         <li class="dropdown"><a href="about.html" target="_blank"><span class="glyphicon glyphicon-info-sign"></span> About</a>
+        
+        <li class="dropdown"><a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-film"></span> Media<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="photo_gallery.html"><span class="glyphicon glyphicon-picture"></span> Photo Gallery</a></li>
+          <li class="divider"></li>
+          <li><a href="https://www.youtube.com/" target="_blank"><span class="glyphicon glyphicon-film"></span> Video Archives</a></li>
+          <li class="divider"></li>
+          <li><a href="news_update.html"><span class="glyphicon glyphicon-bullhorn"></span> News Update</a></li>
+        </ul>
+        </li>
+
+        <li class="dropdown"><a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown">Partners<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Donators</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Volunteers</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Sponsors</a></li>
+          <li class="divider"></li>
+          <li><a href="trustees.html" target="_blank">Board of Trustees</a></li>
+        </ul>
+        </li>
+        
+        <li class="dropdown"><a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown">Donate<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-usd"></span> Donate Cash</a></li>
+          <li class="divider"></li>
+          <li><a href="#"> Donate Gifts</a></li>
+          <li class="divider"></li>
+          <li><a href="#"> Donate a property</a></li>
+          <li class="divider"></li>
+          <li><a href="#"> Donate Other Materials</a></li>
+        </ul>
+      </li>
+
+        <li class="dropdown"><a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown">Join<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="https://www.facebook.com" target="_blank">Join as a Donator</a></li>
+          <li class="divider"></li>
+          <li><a href="#" target="_blank">Join as a Volunteer</a></li>
+          <li class="divider"></li>
+          <li><a href="#" target="_blank">Join as a Sponsor</a></li>
+          <li class="divider"></li>
+          <li><a href="#" target="_blank">Join as a Missionary</a></li>
+        </ul>
+        </li>
+        <li><a href="contact.html" target="_blank"><span class="glyphicon glyphicon-phone-alt"></span> Contact us</a></li>
+       </ul>      
+    </div>
+  </div>
+</nav>
+                         
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Please find the donation account details below</h3>
+        </div>
+        <div class="modal-body">
+          <p><b>Account Name:</b> Balm of Gilead Orphanage</p>
+          <p><b>Account No:</b> 2033669133</p>
+          [First Bank Plc]
+          <hr>
+          <p><span class="glyphicon glyphicon-phone-alt"></span> 08052236041; 07033278304</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>      
+    </div>
+  </div>
+
+<!-- <div class="jumbotron">
+  <h1>...</h1>
+  <div class="container text-center">
+    <h2>Home of Hope</h2>      
+    <p>Some text that represents "the organization"...</p>
+  </div>
+</div> -->
+
+<br>
+<hr>
+
+<div style="text-align:center">
+  <h2>Image Gallery</h2>
+  <p>Click on the images below to enlarge</p>
+</div>
+
+<!-- The four columns -->
+<div  class="horizontal-scroll-wrapper squares">
+  <div class="column">
+    <img src="images/img_nature.jpg" alt="Nature" style="width:100%" class="img-responsive" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/img_snow.jpg" alt="Snow" style="width:100%" class="img-responsive" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/img_mountains.jpg" alt="Mountains" style="width:100%" class="img-responsive" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/img_lights.jpg" alt="Lights" style="width:100%" class="img-responsive" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/img_lights.jpg" alt="Lights" style="width:100%" class="img-responsive" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/img_lights.jpg" alt="Lights" style="width:100%" class="img-responsive" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/img_lights.jpg" alt="Lights" style="width:100%" class="img-responsive" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/img_lights.jpg" alt="Lights" style="width:100%" class="img-responsive" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/img_lights.jpg" alt="Lights" style="width:100%" class="img-responsive" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/img_lights.jpg" alt="Lights" style="width:100%" class="img-responsive" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%" class="img-responsive">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
+
+
+<footer class="navbar container-fluid text text-info text-center">
+  <div>
+    <a href="#" class="hide-xs hide-sm" style="color: white;"> &copy; 2019 Balm of Gilead Widows & Orphans Ministry</a> &nbsp;
+    <a href="#" class="hide-xs"> | FAQ</a>
+    <a href="#"> | Terms</a>
+    <a href="#"> | About Us</a>
+    <a href="#"> | Media</a>
+
+     &nbsp;&nbsp;&nbsp;<span style="color: white;">Follow us on Social Media:</span>&nbsp;&nbsp;
+    <span style="font-size: 20px;">
+        <a href="www.facebook.com" alt="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;
+        <a href="www.twitter.com" alt="twitter" target="_blank"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+        <a href="www.instagram.com" alt="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    </span>
+    <hr>
+    <span style="color: white;"> Made with love By: <a href="www.tbiprofessionals.com" title="www.tbiprofessionals.com" target="_blank">TBI Professionals</a></span>        
+  </div>
+</footer>
+
+</script>
+</body>
+</html>

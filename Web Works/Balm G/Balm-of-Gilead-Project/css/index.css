@@ -1,0 +1,86 @@
+body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+      font-family: Montserrat, sans-serif !important;
+  }
+
+  .carousel-caption {
+    background-color: rgba(50,50,50, 0.2) !important;
+    border-radius: 10px;
+  }
+
+  .jumbotron, .well {
+    background-color: rgba(235,237,239, 0.4) !important;
+    color: #000;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+    border-radius: 0 !important;
+  }
+
+.well:hover {
+  background-color: rgba(255,255,255, 0.8) !important;
+  color: #000 !important;
+  border: none; 
+}
+  
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+
+.navbar {
+    border-radius: 0;
+    z-index: 9999;
+    border: 0;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #222222 !important;
+    background-color: #fff !important;    
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+
+  .dropdown-menu {
+    background-color: rgba(34,34,34, 0.5) !important;
+    border-radius: 0 !important;
+    padding: 0;
+    font-size: 1.2rem; 
+    text-transform: capitalize;
+  }
+
+  .modal-content{
+    border-radius: 0 !important;
+    margin-top: 100px;
+    color: #000;
+    background-color: rgba(235,237,239, 0.9) !important;
+  }
+
+  #myCarousel {
+    margin-top: 50px;
+  }
+
+  footer {
+   padding: 20px;
+   margin-bottom: 0 !important;
+   border-radius: 0 !important;
+   
+  }
